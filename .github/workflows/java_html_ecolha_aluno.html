@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Escolha Aleatória do Aluno</title>
+    <style>
+        #mensagem {
+            font-size: 1.5em;
+            text-align: center;
+            margin-top: 20px;
+            transition: opacity 1s;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Escolha Aleatória do Aluno</h1>
+    <p id="mensagem">Clique no botão para escolher o aluno...</p>
+    <button onclick="iniciarSequencia()">Escolher Aluno</button>
+
+    <script>
+        function iniciarSequencia() {
+            document.getElementById("mensagem").innerText = "O aluno escolhido é o número...";
+
+            setTimeout(function() {
+                const aluno = Math.floor(Math.random() * 25) + 1;
+                document.getElementById("mensagem").innerText = `O aluno escolhido é o número: ${aluno}`;
+            }, 2000);  // 2 segundos para mostrar o número do aluno
+
+            setTimeout(function() {
+                document.getElementById("mensagem").innerText = "Boa Sorte! :)";
+            }, 5000);  // 5 segundos para "Boa Sorte!"
+
+            setTimeout(function() {
+                document.getElementById("mensagem").innerText = "Tens 30 minutos que começam...";
+            }, 8000);  // 8 segundos para mostrar a mensagem dos 30 minutos
+
+            setTimeout(function() {
+                const agora = new Date();
+                const dataHoraFormatada = agora.toLocaleString("pt-PT");
+                document.getElementById("mensagem").innerText = `Agora: ${dataHoraFormatada}`;
+            }, 11000);  // 11 segundos para exibir a data e hora atuais
+        }
+    </script>
+</body>
+</html>
